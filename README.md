@@ -11,15 +11,13 @@
 * PostgreSQL 10
 
 
-### Install Python and pipenv and enter virtual environment.
+### Install Python and pipenv and enter virtual environment:
 
-On macOS system the easiest way to do it is to use homebrew package manager:
+On macOS system the easiest way to do it is to use homebrew package manager. This command will install latest Python version:
 
     $ brew install python
 
-This command will install latest Python version.
-
-Install pipenv.
+Install pipenv:
 
     $ pip3 install pipenv
 
@@ -27,7 +25,7 @@ Start a shell with virtual env loaded:
 
     $ pipenv shell
 
-Next step is to install all the required packages. This project is using `Pipenv` to manage dependencies.
+Next step is to install all the required packages. This project is using `Pipenv` to manage dependencies:
 
     $ pipenv install
 
@@ -37,6 +35,6 @@ Next step is to install all the required packages. This project is using `Pipenv
 
 ### Start the app
 
-  $ python manage.py migrate
-  $ python manage.py createsuperuser
-  $ python manage.py runserver
+    $ python manage.py migrate
+    $ python manage.py createsuperuser
+    $ python manage.py runserver
