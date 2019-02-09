@@ -32,6 +32,8 @@ Next step is to install all the required packages. This project is using `Pipenv
 `Pipenv` automatically creates virtual environment using Python version specified in
 `Pipfile` and installs all dependencies.
 
+### Set up database
+$ createdb tbc_db
 
 ### Start the app
 
