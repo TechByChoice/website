@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'modelcluster',
     'taggit',
     'compressor',
+    'storages',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -59,7 +60,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'storages',
 ]
 
 MIDDLEWARE = [
@@ -109,6 +109,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'tbc_db',
+        'PORT': '5432',
     }
 }
 
@@ -170,6 +171,9 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
+
+COMPRESS_ENABLED = True
+COMPRESS_OFFLINE = True
 
 # Wagtail settings
 
