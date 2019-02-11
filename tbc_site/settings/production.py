@@ -25,7 +25,7 @@ DEBUG = False
 # POSTGRES_URL = 'HEROKU_POSTGRESQL_OLIVE_URL'
 # DATABASES = {'default': dj_database_url.config(default=os.environ[POSTGRES_URL])}
 
-STATICFILES_STORAGE = 'tbc_site.storage.WhiteNoiseStaticFilesStorage'
+STATICFILES_STORAGE = 'tbc_site.settings.storage.WhiteNoiseStaticFilesStorage'
 
 COMPRESS_ENABLED = True
 COMPRESS_OFFLINE = True
