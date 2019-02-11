@@ -31,7 +31,9 @@
         {% block content %}{% endblock %}
 
         {# Global javascript #}
-        <script type="text/javascript" src="{% static 'js/tbc_site.js' %}"></script>
+        {% compress js %}
+          <script type="text/javascript" src="{% static 'js/tbc_site.js' %}"></script>
+        {% endcompress %}
 
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
