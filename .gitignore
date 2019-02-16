@@ -25,4 +25,6 @@ npm-debug.log*
 coverage/
 client/node_modules
 
+/static/
+/media/
 .env
