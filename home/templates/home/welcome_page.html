@@ -1,52 +1,640 @@
-{% load i18n wagtailcore_tags %}
+{% load i18n compress static wagtailcore_tags %}
+<header id="header">
+  <div class="container">
 
-<header class="header">
-  <div class="logo">
-    <a href="https://wagtail.io/">
-      <svg class="figure-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 342.5 126.2"><title>{% trans "Visit the Wagtail website" %}</title><path fill="#FFF" d="M84 1.9v5.7s-10.2-3.8-16.8 3.1c-4.8 5-5.2 10.6-3 18.1 21.6 0 25 12.1 25 12.1L87 27l6.8-8.3c0-9.8-8.1-16.3-9.8-16.8z"/><circle cx="85.9" cy="15.9" r="2.6"/><path d="M89.2 40.9s-3.3-16.6-24.9-12.1c-2.2-7.5-1.8-13 3-18.1C73.8 3.8 84 7.6 84 7.6V1.9C80.4.3 77 0 73.2 0 59.3 0 51.6 10.4 48.3 17.4L9.2 89.3l11-2.1-20.2 39 14.1-2.5L24.9 93c30.6 0 69.8-11 64.3-52.1z"/><path d="M102.4 27l-8.6-8.3L87 27z"/><path fill="#FFF" d="M30 84.1s1-.2 2.8-.6c1.8-.4 4.3-1 7.3-1.8 1.5-.4 3.1-.9 4.8-1.5 1.7-.6 3.5-1.2 5.2-2 1.8-.7 3.6-1.6 5.4-2.6 1.8-1 3.5-2.1 5.1-3.4.4-.3.8-.6 1.2-1l1.2-1c.7-.7 1.5-1.4 2.2-2.2.7-.7 1.3-1.5 1.9-2.3l.9-1.2.4-.6.4-.6c.2-.4.5-.8.7-1.2.2-.4.4-.8.7-1.2l.3-.6.3-.6c.2-.4.4-.8.5-1.2l.9-2.4c.2-.8.5-1.6.7-2.3.2-.7.3-1.5.5-2.1.1-.7.2-1.3.3-2 .1-.6.2-1.2.2-1.7.1-.5.1-1 .2-1.5.1-1.8.1-2.8.1-2.8l1.6.1s-.1 1.1-.2 2.9c-.1.5-.1 1-.2 1.5-.1.6-.1 1.2-.3 1.8-.1.6-.3 1.3-.4 2-.2.7-.4 1.4-.6 2.2-.2.8-.5 1.5-.8 2.4-.3.8-.6 1.6-1 2.5l-.6 1.2-.3.6-.3.6c-.2.4-.5.8-.7 1.3-.3.4-.5.8-.8 1.2-.1.2-.3.4-.4.6l-.4.6-.9 1.2c-.7.8-1.3 1.6-2.1 2.3-.7.8-1.5 1.4-2.3 2.2l-1.2 1c-.4.3-.8.6-1.3.9-1.7 1.2-3.5 2.3-5.3 3.3-1.8.9-3.7 1.8-5.5 2.5-1.8.7-3.6 1.3-5.3 1.8-1.7.5-3.3 1-4.9 1.3-3 .7-5.6 1.3-7.4 1.6-1.6.6-2.6.8-2.6.8z"/><g fill="#231F20"><path d="M127 83.9h-8.8l-12.6-36.4h7.9l9 27.5 9-27.5h7.9l9 27.5 9-27.5h7.9L153 83.9h-8.8L135.6 59 127 83.9zM200.1 83.9h-7V79c-3 3.6-7 5.4-12.1 5.4-3.8 0-6.9-1.1-9.4-3.2s-3.7-5-3.7-8.6c0-3.6 1.3-6.3 4-8 2.6-1.8 6.2-2.7 10.7-2.7h9.9v-1.4c0-4.8-2.7-7.3-8.1-7.3-3.4 0-6.9 1.2-10.5 3.7l-3.4-4.8c4.4-3.5 9.4-5.3 15.1-5.3 4.3 0 7.8 1.1 10.5 3.2 2.7 2.2 4.1 5.6 4.1 10.2v23.7zm-7.7-13.6v-3.1h-8.6c-5.5 0-8.3 1.7-8.3 5.2 0 1.8.7 3.1 2.1 4.1 1.4.9 3.3 1.4 5.7 1.4 2.4 0 4.6-.7 6.4-2.1 1.8-1.3 2.7-3.1 2.7-5.5zM241.7 47.5v31.7c0 6.4-1.7 11.3-5.2 14.5-3.5 3.2-8 4.8-13.4 4.8-5.5 0-10.4-1.7-14.8-5.1l3.6-5.8c3.6 2.7 7.1 4 10.8 4 3.6 0 6.5-.9 8.6-2.8 2.1-1.9 3.2-4.9 3.2-9v-4.7c-1.1 2.1-2.8 3.9-4.9 5.1-2.1 1.3-4.5 1.9-7.1 1.9-4.8 0-8.8-1.7-11.9-5.1-3.1-3.4-4.7-7.6-4.7-12.6s1.6-9.2 4.7-12.6c3.1-3.4 7.1-5.1 11.9-5.1 4.8 0 8.7 2 11.7 6v-5.4h7.5zm-28.4 16.8c0 3 .9 5.6 2.8 7.7 1.8 2.2 4.3 3.2 7.5 3.2 3.1 0 5.7-1 7.6-3.1 1.9-2.1 2.9-4.7 2.9-7.8 0-3.1-1-5.8-2.9-7.9-2-2.2-4.5-3.2-7.6-3.2-3.1 0-5.6 1.1-7.4 3.4-2 2.1-2.9 4.7-2.9 7.7zM260.9 53.6v18.5c0 1.7.5 3.1 1.4 4.1.9 1 2.2 1.5 3.8 1.5 1.6 0 3.2-.8 4.7-2.4l3.1 5.4c-2.7 2.4-5.7 3.6-8.9 3.6-3.3 0-6-1.1-8.3-3.4-2.3-2.3-3.5-5.3-3.5-9.1V53.6h-4.6v-6.2h4.6V36.1h7.7v11.4h9.6v6.2h-9.6zM309.5 83.9h-7V79c-3 3.6-7 5.4-12.1 5.4-3.8 0-6.9-1.1-9.4-3.2s-3.7-5-3.7-8.6c0-3.6 1.3-6.3 4-8 2.6-1.8 6.2-2.7 10.7-2.7h9.9v-1.4c0-4.8-2.7-7.3-8.1-7.3-3.4 0-6.9 1.2-10.5 3.7l-3.4-4.8c4.4-3.5 9.4-5.3 15.1-5.3 4.3 0 7.8 1.1 10.5 3.2 2.7 2.2 4.1 5.6 4.1 10.2v23.7zm-7.7-13.6v-3.1h-8.6c-5.5 0-8.3 1.7-8.3 5.2 0 1.8.7 3.1 2.1 4.1 1.4.9 3.3 1.4 5.7 1.4 2.4 0 4.6-.7 6.4-2.1 1.8-1.3 2.7-3.1 2.7-5.5zM319.3 40.2c-1-1-1.4-2.1-1.4-3.4 0-1.3.5-2.5 1.4-3.4 1-1 2.1-1.4 3.4-1.4 1.3 0 2.5.5 3.4 1.4 1 1 1.4 2.1 1.4 3.4 0 1.3-.5 2.5-1.4 3.4s-2.1 1.4-3.4 1.4c-1.3.1-2.4-.4-3.4-1.4zm7.2 43.7h-7.7V47.5h7.7v36.4zM342.5 83.9h-7.7V33.1h7.7v50.8z"/></g></svg>
-    </a>
+    <div id="logo" class="pull-left">
+      <!-- Uncomment below if you prefer to use an image logo -->
+       <a href="#intro"><img src="{% static 'imgs/logo.png' %}" alt="" title=""></a>
+    </div>
+
+    <nav id="nav-menu-container">
+      <ul class="nav-menu">
+        <li class="menu-active"><a href="#intro">Home</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#values">Values</a></li>
+        <li><a href="#call-to-action">Membership</a></li>
+        <li><a href="#team">Team</a></li>
+
+        <!--<li><a href="#sponsors">Sponsors</a></li>-->
+        <!-- TODO: make templates for Code of Conduct and diversity Statement -->
+        <!-- <li class="menu-has-children"><a href="">Our Statements</a>
+          <ul>
+            <li><a href="coc.html">Code of Conduct</a></li>
+            <li><a href="diversity-statement.html">Diversity Statement</a></li>
+          </ul>
+        </li> -->
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav><!-- #nav-menu-container -->
   </div>
-  <div class="header-link">
-    {% comment %}
-      This works for all cases but prerelease versions:
-    {% endcomment %}
-    <a href="{% wagtail_documentation_path %}/releases/{% wagtail_release_notes_path %}">
-      {% trans "View the release notes" %}
-    </a>
+</header><!-- #header -->
+
+<!--==========================
+  Intro Section
+============================-->
+<section id="intro">
+
+  <div class="intro-text">
+    <h2 class="into--title">Tech By Choice</h2>
+    <h3 class="intro--tag-line"><span class="text--green">Di</span><span class="text--blue">v</span><span class="text--purple">er</span><span class="text--red">se</span><span class="text--yellow"></span> <span class="text-white">By Design</span></h3>
+    <a href="#call-to-action" class="btn-get-started btn-primary scrollto">Join Now</a>
+    <div class="down-arrow text-white">Scroll to learn more <br><i class="bounce  fa fa-chevron-down text-white"></i></div>
   </div>
-</header>
-<main class="main">
-  <div class="figure">
-    <svg class="figure-space" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" aria-hidden="true">
-      <path class="egg" fill="currentColor" d="M150 250c-42.741 0-75-32.693-75-90s42.913-110 75-110c32.088 0 75 52.693 75 110s-32.258 90-75 90z"/>
-      <ellipse fill="#ddd" cx="150" cy="270" rx="40" ry="7"/>
-    </svg>
-  </div>
-  <div class="main-text">
-    <h1>{% trans "Welcome to your new Wagtail site!" %}</h1>
-    <p>{% trans 'Please feel free to <a href="https://github.com/wagtail/wagtail/wiki/Slack">join our community on Slack</a>, or get started with one of the links below.' %}</p>
-  </div>
+</section><!-- #intro -->
+
+<main id="main">
+
+  <!--==========================
+    About Us Section
+  ============================-->
+  <section id="about" class="section-bg">
+    <div class="container-fluid">
+      <div class="section-header">
+        <h3 class="section-title">About Us</h3>
+        <span class="section-divider"></span>
+        <p class="section-description">
+          We are a community aimed to increase diversity in the tech industry one technologist at a time.<br>
+          <!-- add more content as needed-->
+          We offer low to no-cost events, workshops, and classes to help support individuals in protected groups
+          enter and stay in the tech industry.
+        </p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-6 about-img wow fadeInLeft">
+          <img src="{% static 'imgs/adult-conference-room-cooperation-1181618.jpg' %}" alt="">
+        </div>
+
+        <div class="col-lg-6 content wow fadeInRight">
+          <h2>Our Mission</h2>
+          <p>The goal of Tech By Choice is to increase the diversity of the tech industry by offering low to no-cost
+            tech skill-building events, workshops, and classes to anyone that identifies as a person of color,
+            woman, LGTBQ+, differently abled, all religious backgrounds, with the only age requirement being 18+. We work to empower the
+            underrepresented to flourish without discrimination and ensure that we are welcoming to all.</p>
+          <h2>Our Vision</h2>
+          <p>
+            Increase the wealth with quality of life of protected groups by creating a space to learn the technical and
+            nontechnical skills required for roles in the tech industry.
+          </p>
+
+          <!--<ul>-->
+            <!--<li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>-->
+            <!--<li><i class="ion-android-checkmark-circle"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>-->
+            <!--<li><i class="ion-android-checkmark-circle"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>-->
+          <!--</ul>-->
+
+          <!--<p>-->
+            <!--Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum Libero justo laoreet sit amet cursus sit amet dictum sit. Commodo sed egestas egestas fringilla phasellus faucibus scelerisque eleifend donec-->
+          <!--</p>-->
+        </div>
+      </div>
+
+    </div>
+  </section><!-- #about -->
+
+  <!--==========================
+    Values Section
+  ============================-->
+  <section id="values">
+    <div class="container">
+
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="section-header wow fadeIn" data-wow-duration="1s">
+            <h3 class="section-title">Our Values</h3>
+            <span class="section-divider"></span>
+          </div>
+        </div>
+
+        <div class="col-lg-12 ">
+
+          <div class="row">
+
+            <div class="col-lg-4 col-md-6 col-sm-12 box wow fadeInRight">
+              <div class="icon"><img class="ion-ios-speedometer-outline" src="{% static 'imgs/icon-diversity.svg' %}"></div>
+              <h4 class="title"><a href="">Diversity</a></h4>
+              <p class="description">Diversity is key to having a well rounded outlook on any problem you may face. The more diverse a team is, is the more life experiences and viewpoints you will be privy to.</p>
+            </div>
+            <div class="col-lg-4 col-md-6 col-sm-12 box wow fadeInRight" data-wow-delay="0.1s">
+              <div class="icon"><img class="ion-ios-flask-outline" src="{% static 'imgs/icon-empathy.svg' %}"></div>
+              <h4 class="title"><a href="">Empathy</a></h4>
+              <p class="description">We ask our members to come to us as they are, so we must remember to be open to meet them where they are.</p>
+            </div>
+            <div class="text-center col-lg-4 col-md-12 col-sm-12 box wow fadeInRight" data-wow-delay="0.3s">
+              <div class="icon"><img class="ion-ios-flask-outline" src="{% static 'imgs/icon-integrity.svg' %}"></div>
+              <h4 class="title"><a href="">Integrity</a></h4>
+              <p class="description">In order to keep our space a safe space, we have to make sure all of our decisions are directly inline with our mission and overall vision for our members' safety.</p>
+            </div>
+            <div class="row offset-lg-1">
+            <div class="text-center col-lg-6 col-lg-offset-4 col-md-6 col-sm-12box wow fadeInRight" data-wow-delay="0.3s">
+              <div class="icon"><img class="ion-ios-flask-outline" src="{% static 'imgs/icon-teach.svg' %}"></div>
+              <h4 class="title"><a href="">Teach</a></h4>
+              <p class="description">Acquiring knowledge is important, but sharing knowledge is how we grow as a group.</p>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 box wow fadeInRight" data-wow-delay="0.2s">
+              <div class="icon"><img class="ion-ios-flask-outline" src="{% static 'imgs/icon-intentional.svg' %}"></div>
+              <h4 class="title"><a href="">Intentional</a></h4>
+              <p class="description">To excel for our members, we must remember to put them first.</p>
+            </div>
+          </div>
+            </div>
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section><!-- #features -->
+
+  <!--==========================
+    Product Advanced Featuress Section
+  ============================-->
+  <!--<section id="advanced-features">-->
+
+    <!--<div class="features-row section-bg">-->
+      <!--<div class="container">-->
+        <!--<div class="row">-->
+          <!--<div class="col-12">-->
+            <!--<img class="advanced-feature-img-right wow fadeInRight" src="{% static 'img/advanced-feature-1.jpg' %}" alt="">-->
+            <!--<div class="wow fadeInLeft">-->
+              <!--<h2>Initiatives #1</h2>-->
+              <!--<h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>-->
+              <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>-->
+              <!--<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="features-row">-->
+      <!--<div class="container">-->
+        <!--<div class="row">-->
+          <!--<div class="col-12">-->
+            <!--<img class="advanced-feature-img-left" src="{% static 'img/advanced-feature-2.jpg' %}" alt="">-->
+            <!--<div class="wow fadeInRight">-->
+              <!--<h2>Initiatives #2</h2>-->
+              <!--<i class="ion-ios-paper-outline" class="wow fadeInRight" data-wow-duration="0.5s"></i>-->
+              <!--<p class="wow fadeInRight" data-wow-duration="0.5s">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>-->
+              <!--<i class="ion-ios-color-filter-outline wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.5s"></i>-->
+              <!--<p class="wow fadeInRight" data-wow-delay="0.2s" data-wow-duration="0.5s">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>-->
+              <!--<i class="ion-ios-barcode-outline wow fadeInRight" data-wow-delay="0.4" data-wow-duration="0.5s"></i>-->
+              <!--<p class="wow fadeInRight" data-wow-delay="0.4s" data-wow-duration="0.5s">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="features-row section-bg">-->
+      <!--<div class="container">-->
+        <!--<div class="row">-->
+          <!--<div class="col-12">-->
+            <!--<img class="advanced-feature-img-right wow fadeInRight" src="{% static 'img/advanced-feature-3.jpg' %}" alt="">-->
+            <!--<div class="wow fadeInLeft">-->
+              <!--<h2>Initiatives #3</h2>-->
+              <!--<h3>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h3>-->
+              <!--<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam</p>-->
+              <!--<i class="ion-ios-albums-outline"></i>-->
+              <!--<p>Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+    <!--</div>-->
+  <!--</section>&lt;!&ndash; #advanced-features &ndash;&gt;-->
+
+  <!--==========================
+    Call To Action Section
+  ============================-->
+  <section id="call-to-action">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-9 text-center text-lg-left text-black">
+          <h3 class="cta-title">Become A Member</h3>
+          <!--<p class="cta-text"> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>-->
+        </div>
+        <!--<div class="col-lg-3 cta-btn-container text-center">-->
+          <!--<a class="cta-btn align-middle" href="#">Call To Action</a>-->
+        <!--</div>-->
+      </div>
+      <div class="row">
+              <div class="card-deck">
+                      <div class="card bg-black text-white">
+                          <div class="card-body">
+                              <h5 class="card-title">Slack</h5>
+                              <p class="card-text">The Tech By Choice Slack is a place for you to chat and share resources, tips and tricks, and funny memes with other people across the nation.</p>
+                          </div>
+                          <div class="card-footer  text-center">
+                              <a target="_blank" href="https://techbychoice.typeform.com/to/a6FHoW" class="card-link btn float-left btn-block btn-primary">Join Our Slack</a>
+                          </div>
+                      </div>
+                      <div class="card bg-black text-white">
+                          <div class="card-body">
+                              <h5 class="card-title">Meetup</h5>
+                              <p class="card-text">Join us for a in=person classes, workshops, and other fun local events through one of our two Meetups, <b>Los Angeles</b> &amp; <b>Oakland</b>.</p>
+                          </div>
+                          <div class="card-footer row">
+                              <div class="col-sm-12">
+                                  <a target="_blank" href="https://www.meetup.com/Tech-By-Choice/" class="card-link btn btn-primary btn-block">Los Angeles Meetup</a>
+                              </div>
+                              <div class="col-sm-12 mt-4">
+                                  <a target="_blank" href="https://www.meetup.com/Tech-By-Choice-Oakland/" class="mt-4 mt-md-0 mt-lg-0 card-link btn btn-primary btn-block">Oakland Meetup</a>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="card bg-black text-white">
+                          <div class="card-body">
+                              <h5 class="card-title">Become A Local Leader</h5>
+                              <p class="card-text">Join Tech By Choice and become a community leader today! We’re always accepting applications for teachers, classroom TAs, and volunteers.</p>
+                          </div>
+                          <div class="card-footer row">
+                              <a target="_blank" href="https://techbychoice.typeform.com/to/dh3Jxg" class="card-link btn float-left btn-block btn-primary">Apply Today</a>
+                          </div>
+                      </div>
+              </div>
+          </div>
+      </div>
+
+    </div>
+  </section><!-- #call-to-action -->
+
+  <!--==========================
+    More Features Section
+  ============================-->
+  <!--<section id="more-features" class="section-bg">-->
+    <!--<div class="container">-->
+
+      <!--<div class="section-header">-->
+        <!--<h3 class="section-title">More Features</h3>-->
+        <!--<span class="section-divider"></span>-->
+        <!--<p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
+      <!--</div>-->
+
+      <!--<div class="row">-->
+
+        <!--<div class="col-lg-6">-->
+          <!--<div class="box wow fadeInLeft">-->
+            <!--<div class="icon"><i class="ion-ios-stopwatch-outline"></i></div>-->
+            <!--<h4 class="title"><a href="">Lorem Ipsum</a></h4>-->
+            <!--<p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident etiro rabeta lingo.</p>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-lg-6">-->
+          <!--<div class="box wow fadeInRight">-->
+            <!--<div class="icon"><i class="ion-ios-bookmarks-outline"></i></div>-->
+            <!--<h4 class="title"><a href="">Dolor Sitema</a></h4>-->
+            <!--<p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata nodera clas.</p>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-lg-6">-->
+          <!--<div class="box wow fadeInLeft">-->
+            <!--<div class="icon"><i class="ion-ios-heart-outline"></i></div>-->
+            <!--<h4 class="title"><a href="">Sed ut perspiciatis</a></h4>-->
+            <!--<p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur trinige zareta lobur trade.</p>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-lg-6">-->
+          <!--<div class="box wow fadeInRight">-->
+            <!--<div class="icon"><i class="ion-ios-analytics-outline"></i></div>-->
+            <!--<h4 class="title"><a href="">Magni Dolores</a></h4>-->
+            <!--<p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum rideta zanox satirente madera</p>-->
+          <!--</div>-->
+        <!--</div>-->
+
+      <!--</div>-->
+    <!--</div>-->
+  <!--</section>&lt;!&ndash; #more-features &ndash;&gt;-->
+
+  <!--==========================
+    Clients
+  ============================-->
+  <!--<section id="sponsors-logo">-->
+    <!--<div class="container">-->
+
+      <!--<div class="row wow fadeInUp">-->
+
+        <!--<div class="col-md-2">-->
+          <!--<img src="{% static 'img/clients/client-1.png' %}" alt="">-->
+        <!--</div>-->
+
+        <!--<div class="col-md-2">-->
+          <!--<img src="{% static 'img/clients/client-2.png' %}" alt="">-->
+        <!--</div>-->
+
+        <!--<div class="col-md-2">-->
+          <!--<img src="{% static 'img/clients/client-3.png' %}" alt="">-->
+        <!--</div>-->
+
+        <!--<div class="col-md-2">-->
+          <!--<img src="{% static 'img/clients/client-4.png' %}" alt="">-->
+        <!--</div>-->
+
+        <!--<div class="col-md-2">-->
+          <!--<img src="{% static 'img/clients/client-5.png' %}" alt="">-->
+        <!--</div>-->
+
+        <!--<div class="col-md-2">-->
+          <!--<img src="{% static 'img/clients/client-6.png' %}" alt="">-->
+        <!--</div>-->
+
+      <!--</div>-->
+    <!--</div>-->
+  <!--</section>&lt;!&ndash; #more-features &ndash;&gt;-->
+
+  <!--==========================
+    Pricing Section
+  ============================-->
+  <!--<section id="sponsors" class="section-bg">-->
+    <!--<div class="container">-->
+
+      <!--<div class="section-header">-->
+        <!--<h3 class="section-title">Pricing</h3>-->
+        <!--<span class="section-divider"></span>-->
+        <!--<p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
+      <!--</div>-->
+
+      <!--<div class="row">-->
+
+        <!--<div class="col-lg-4 col-md-6">-->
+          <!--<div class="box wow fadeInLeft">-->
+            <!--<h3>Free</h3>-->
+            <!--<h4><sup>$</sup>0<span> month</span></h4>-->
+            <!--<ul>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Quam adipiscing vitae proin</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Nec feugiat nisl pretium</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Nulla at volutpat diam uteera</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Pharetra massa massa ultricies</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Massa ultricies mi quis hendrerit</li>-->
+            <!--</ul>-->
+            <!--<a href="#" class="get-started-btn">Get Started</a>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-lg-4 col-md-6">-->
+          <!--<div class="box featured wow fadeInUp">-->
+            <!--<h3>Business</h3>-->
+            <!--<h4><sup>$</sup>29<span> month</span></h4>-->
+            <!--<ul>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Quam adipiscing vitae proin</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Nec feugiat nisl pretium</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Nulla at volutpat diam uteera</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Pharetra massa massa ultricies</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Massa ultricies mi quis hendrerit</li>-->
+            <!--</ul>-->
+            <!--<a href="#" class="get-started-btn">Get Started</a>-->
+          <!--</div>-->
+        <!--</div>-->
+
+        <!--<div class="col-lg-4 col-md-6">-->
+          <!--<div class="box wow fadeInRight">-->
+            <!--<h3>Developer</h3>-->
+            <!--<h4><sup>$</sup>49<span> month</span></h4>-->
+            <!--<ul>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Quam adipiscing vitae proin</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Nec feugiat nisl pretium</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Nulla at volutpat diam uteera</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Pharetra massa massa ultricies</li>-->
+              <!--<li><i class="ion-android-checkmark-circle"></i> Massa ultricies mi quis hendrerit</li>-->
+            <!--</ul>-->
+            <!--<a href="#" class="get-started-btn">Get Started</a>-->
+          <!--</div>-->
+        <!--</div>-->
+
+      <!--</div>-->
+    <!--</div>-->
+  <!--</section>&lt;!&ndash; #pricing &ndash;&gt;-->
+
+
+  <!--==========================
+    Frequently Asked Questions Section
+  ============================-->
+  <!--<section id="faq">-->
+    <!--<div class="container">-->
+
+      <!--<div class="section-header">-->
+        <!--<h3 class="section-title">Frequently Asked Questions</h3>-->
+        <!--<span class="section-divider"></span>-->
+        <!--<p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
+      <!--</div>-->
+
+      <!--<ul id="faq-list" class="wow fadeInUp">-->
+        <!--<li>-->
+          <!--<a data-toggle="collapse" class="collapsed" href="#faq1">Non consectetur a erat nam at lectus urna duis? <i class="ion-android-remove"></i></a>-->
+          <!--<div id="faq1" class="collapse" data-parent="#faq-list">-->
+            <!--<p>-->
+              <!--Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.-->
+            <!--</p>-->
+          <!--</div>-->
+        <!--</li>-->
+
+        <!--<li>-->
+          <!--<a data-toggle="collapse" href="#faq2" class="collapsed">Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque? <i class="ion-android-remove"></i></a>-->
+          <!--<div id="faq2" class="collapse" data-parent="#faq-list">-->
+            <!--<p>-->
+              <!--Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.-->
+            <!--</p>-->
+          <!--</div>-->
+        <!--</li>-->
+
+        <!--<li>-->
+          <!--<a data-toggle="collapse" href="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="ion-android-remove"></i></a>-->
+          <!--<div id="faq3" class="collapse" data-parent="#faq-list">-->
+            <!--<p>-->
+              <!--Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis-->
+            <!--</p>-->
+          <!--</div>-->
+        <!--</li>-->
+
+        <!--<li>-->
+          <!--<a data-toggle="collapse" href="#faq4" class="collapsed">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="ion-android-remove"></i></a>-->
+          <!--<div id="faq4" class="collapse" data-parent="#faq-list">-->
+            <!--<p>-->
+              <!--Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.-->
+            <!--</p>-->
+          <!--</div>-->
+        <!--</li>-->
+
+        <!--<li>-->
+          <!--<a data-toggle="collapse" href="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="ion-android-remove"></i></a>-->
+          <!--<div id="faq5" class="collapse" data-parent="#faq-list">-->
+            <!--<p>-->
+              <!--Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in-->
+            <!--</p>-->
+          <!--</div>-->
+        <!--</li>-->
+
+        <!--<li>-->
+          <!--<a data-toggle="collapse" href="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="ion-android-remove"></i></a>-->
+          <!--<div id="faq6" class="collapse" data-parent="#faq-list">-->
+            <!--<p>-->
+              <!--Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.-->
+            <!--</p>-->
+          <!--</div>-->
+        <!--</li>-->
+
+      <!--</ul>-->
+
+    <!--</div>-->
+  <!--</section>&lt;!&ndash; #faq &ndash;&gt;-->
+
+  <!--==========================
+    Our Team Section
+  ============================-->
+  <section id="team" class="section-bg">
+    <div class="container">
+      <div class="section-header">
+        <h3 class="section-title">Our Team</h3>
+        <span class="section-divider"></span>
+        <!--<p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>-->
+      </div>
+      <div class="row wow fadeInUp">
+        <div class="col-lg-3 col-md-6">
+          <div class="member">
+            <div class="pic img-fluid"><img src="{% static 'imgs/valerie.jpg' %}" alt="Image of Valerie Sharp"></div>
+            <h4>Valerie Sharp</h4>
+            <span>Executive Director</span>
+            <div class="social">
+              <!--<a target="_blank" href="https://twitter.com/digitalblkhippy"><i class="fa fa-twitter"></i></a>-->
+              <a target="_blank" href="https://linkedin.com/in/valerie--sharp"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="member">
+            <div class="pic img-fluid"><img src="https://media.licdn.com/dms/image/C5103AQHbr_9QMF08yg/profile-displayphoto-shrink_800_800/0?e=1553126400&v=beta&t=MxBQayPDmYWieDAsfvJ7u6i2XRA6fA6SRjpCSDK4Ang" alt="Image of Vanessa Archambault"></div>
+            <h4>Vanessa Archambault</h4>
+            <span>Chief Technology Officer</span>
+            <div class="social">
+              <a target="_blank" href="https://www.linkedin.com/in/vanessaarchambault/"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="member">
+            <div class="pic img-fluid"><img src="https://media.licdn.com/dms/image/C4D03AQGDjuYjYwwpUw/profile-displayphoto-shrink_800_800/0?e=1553126400&v=beta&t=5GxwzTG1swVqfuCOf5IX3MSQ8f-hn50bhj9e93gDUuA" alt=""></div>
+            <h4>Renee Carignan</h4>
+            <span>Chief Operations Officer</span>
+            <div class="social">
+              <a target="_blank" href="https://www.linkedin.com/in/reneecs/"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <div class="member">
+            <div class="pic img-fluid"><img src="https://media.licdn.com/dms/image/C5603AQHpw0MwHilrsw/profile-displayphoto-shrink_800_800/0?e=1555545600&v=beta&t=eHL7bpCyjyjuEUV5GwQb0EWDw7dTfwWcNgyCnSuHHTc" alt=""></div>
+            <h4>Tracie Howard Womack</h4>
+            <span>Community Advocate Director</span>
+            <div class="social">
+              <a target="_blank" href="https://www.linkedin.com/in/tracie-womack-6079b713/"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- #team -->
+
+  <!--==========================
+    Contact Section
+  ============================-->
+  <section id="contact">
+    <div class="container">
+      <div class="row wow fadeInUp">
+
+        <div class="col-lg-4 col-md-4">
+          <div class="contact-about">
+            <h3 class="text-dark brand-name">Tech By Choice</h3>
+            <h4 class="intro--tag-line tag-line"><span class="text--green">Di</span><span class="text--blue">v</span><span class="text--purple">er</span><span class="text--red">s</span><span class="text--yellow">e</span><span class="text-dark"> By Design</span></h4>
+            <p>Have any questions or looking for way to help support our mission? Feel free to contact us any time through any of our social media accounts below, or via email. </p>
+            <p>Hope to hear from you soon!</p>
+            <div class="social-links">
+              <a target="_blank" href="https://twitter.com/_techbychoice" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a target="_blank" href="https://www.facebook.com/TechByChoiceDiverseByDesign" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a target="_blank" href="https://www.linkedin.com/company/tech-by-choice-org/about/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="mailto:hello@techbychoice.org" class="email"><i class="fa fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="info">
+            <div>
+              <h4 class="section-title text-lg-center text-sm-left">CONTACT US</h4>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-8">
+          <div class="form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form role="form" class="contactForm">
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group col-lg-6">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validation"></div>
+              </div>
+              <label style="display:none"></label>
+              <input type="text" name="__bucket_trap__" style="display: none" />
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validation"></div>
+              </div>
+              <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- #contact -->
+
 </main>
-<footer class="footer">
-  <a class="option option-one" href="{% wagtail_documentation_path %}/">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 21c0 .5.4 1 1 1h4c.6 0 1-.5 1-1v-1H9v1zm3-19C8.1 2 5 5.1 5 9c0 2.4 1.2 4.5 3 5.7V17c0 .5.4 1 1 1h6c.6 0 1-.5 1-1v-2.3c1.8-1.3 3-3.4 3-5.7 0-3.9-3.1-7-7-7zm2.9 11.1l-.9.6V16h-4v-2.3l-.9-.6C7.8 12.2 7 10.6 7 9c0-2.8 2.2-5 5-5s5 2.2 5 5c0 1.6-.8 3.2-2.1 4.1z"/></svg>
-    <div>
-      <h4>{% trans "Wagtail Documentation" %}</h4>
-      <p>{% trans "Topics, references, & how-tos" %}</p>
+
+<!--==========================
+  Footer
+============================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 text-lg-left text-center">
+        <div class="copyright">
+          &copy; Copyright <strong>Tech By Choice. Diverse By Design</strong>. All Rights Reserved
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+          <a href="#intro" class="scrollto">Home</a>
+          <a href="#about" class="scrollto">About</a>
+          <!-- TODO: make templates for code of conduct and diversity statement -->
+          <!-- <a href="coc.html">Code of Conduct</a>
+          <a href="diversity-statement.html">Diversity Statement</a> -->
+          <!--<a href="/co">Privacy Policy</a>-->
+          <!--<a href="#">Terms of Use</a>-->
+        </nav>
+      </div>
     </div>
-  </a>
-  <a class="option option-two" href="{% wagtail_documentation_path %}/getting_started/tutorial.html">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/></svg>
-    <div>
-      <h4>{% trans "Tutorial" %}</h4>
-      <p>{% trans "Build your first Wagtail site" %}</p>
-    </div>
-  </a>
-  <a class="option option-three" href="{% url 'wagtailadmin_home' %}">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M0 0h24v24H0z" fill="none"/><path d="M16.5 13c-1.2 0-3.07.34-4.5 1-1.43-.67-3.3-1-4.5-1C5.33 13 1 14.08 1 16.25V19h22v-2.75c0-2.17-4.33-3.25-6.5-3.25zm-4 4.5h-10v-1.25c0-.54 2.56-1.75 5-1.75s5 1.21 5 1.75v1.25zm9 0H14v-1.25c0-.46-.2-.86-.52-1.22.88-.3 1.96-.53 3.02-.53 2.44 0 5 1.21 5 1.75v1.25zM7.5 12c1.93 0 3.5-1.57 3.5-3.5S9.43 5 7.5 5 4 6.57 4 8.5 5.57 12 7.5 12zm0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm9 5.5c1.93 0 3.5-1.57 3.5-3.5S18.43 5 16.5 5 13 6.57 13 8.5s1.57 3.5 3.5 3.5zm0-5.5c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2z"/></svg>
-    <div>
-      <h4>{% trans "Admin Interface" %}</h4>
-      <p>{% trans "Create your superuser first!" %}</p>
-    </div>
-  </a>
-</footer>
+  </div>
+</footer><!-- #footer -->

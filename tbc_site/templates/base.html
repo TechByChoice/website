@@ -14,11 +14,63 @@
                 {% endwith %}
             {% endblock %}
         </title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        {# Favicons #}
+        <!-- Favicons -->
+        <!--<link href="img/favicon.png" rel="icon">-->
+        <!--<link href="img/apple-touch-icon.png" rel="apple-touch-icon">-->
+        <link rel="apple-touch-icon" sizes="180x180" href="{% static 'imgs/apple-touch-icon.png' %}">
+        <link rel="icon" type="image/png" sizes="32x32" href="{% static 'imgs/favicon-32x32.png' %}">
+        <link rel="icon" type="image/png" sizes="16x16" href="{% static 'imgs/favicon-16x16.png' %}">
+        <link rel="manifest" href="{% static 'imgs/site.webmanifest' %}">
+        <link rel="mask-icon" href="{% static 'imgs/safari-pinned-tab.svg' %}" color="#c50000">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="theme-color" content="#ffffff">
+
+        {# Search Engine #}
+        <meta name="description" content="A community aimed to increase diversity in the tech one technologist at a time.">
+        <meta name="image" content="{% static 'imgs/fb-image.jpg' %}">
+        <!-- Schema.org for Google -->
+        <meta itemprop="name" content="Tech By Choice. Diverse By Design.">
+        <meta itemprop="description" content="A community aimed to increase diversity in the tech one technologist at a time.">
+        <meta itemprop="image" content="http://techbychoice.org/imgs/logo.png">
+        <!-- Twitter -->
+        <meta name="twitter:card" content="summary_large_image">
+        <meta name="twitter:site" content="$_TechByChoice">
+        <meta name="twitter:title" content="Tech By Choice. Diverse By Design.">
+        <meta name="twitter:description" content="A community aimed to increase diversity in the tech one technologist at a time.">
+        <meta name="twitter:image" content="https://c1.staticflickr.com/8/7858/45858024055_96548a878c.jpg">
+        <meta name="twitter:image:alt" content="Tech By Choice Logo">
+
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-132510618-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-132510618-1');
+        </script>
+
 
         {# Global stylesheets #}
+        <!-- Bootstrap CSS File -->
+        <link href="{% static 'lib/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+        <!-- Libraries CSS Files -->
+        <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/font-awesome/css/font-awesome.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/ionicons/css/ionicons.min.css' %}" rel="stylesheet">
+        <link href="{% static 'lib/magnific-popup/magnific-popup.css' %}" rel="stylesheet">
+
+        <!-- Main Stylesheet File -->
         <link rel="stylesheet" type="text/css" href="{% static 'css/tbc_site.css' %}">
+        <link href="{% static 'css/style.css' %}" rel="stylesheet">
+        <link href="{% static 'css/tbc-branding.css' %}" rel="stylesheet">
 
         {% block extra_css %}
             {# Override this in templates to add extra stylesheets #}
@@ -30,9 +82,27 @@
 
         {% block content %}{% endblock %}
 
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+
         {# Global javascript #}
         {% compress js %}
           <script type="text/javascript" src="{% static 'js/tbc_site.js' %}"></script>
+          <script src="{% static 'lib/jquery/jquery-migrate.min.js' %}"></script>
+          <script src="{% static 'lib/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+          <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+          <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+          <script src="{% static 'lib/superfish/hoverIntent.js' %}"></script>
+          <script src="{% static 'lib/superfish/superfish.min.js' %}"></script>
+          <script src="{% static 'lib/magnific-popup/magnific-popup.min.js' %}"></script>
+
+          <!-- Contact Form JavaScript File -->
+          <script src="{% static 'js/contactform.js' %}"></script>
+
+          <!-- Template Main Javascript File -->
+          <script src="{% static 'js/main.js' %}"></script>
         {% endcompress %}
 
         {% block extra_js %}
