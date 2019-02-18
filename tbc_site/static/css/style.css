@@ -717,7 +717,6 @@ body.mobile-nav-active #mobile-nav-toggle {
   overflow: hidden;
   background:
           linear-gradient(rgba(197, 0, 0, 0.6196078431372549), rgba(248, 249, 250, 0.25)),
-          /*url(../img/call-to-action-bg.jpg) fixed center center;*/
           url(../imgs/fist-bg-img.jpg) fixed center center;
   background-size: cover;
   padding: 80px 0;
