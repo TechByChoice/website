@@ -2,13 +2,20 @@
 
 ## created with [wagtail](https://wagtail.io/)
 
-## Installation instructions:
+More deployment info found here: [Wagtail/Heroku deployment guide](https://wagtail.io/blog/wagtail-heroku-2017/)
+
+Check out the [admin panel](https://tbc-site.herokuapp.com/admin)
+Ask vanessa@techbychoice.org for Production login credentials!
+
+## Local Development Installation instructions:
 
 ## Requirements
 
-* Python 3
-* Pipenv
-* PostgreSQL 10
+- Python 3.6.x
+- Postgresql 10.x (Production version)
+  - You can check the current version of our postgres db on heroku cli with: `heroku pg:info -a [production-app-name]`
+	- More information about what versions of postgres Heroku supports here: https://devcenter.heroku.com/articles/heroku-postgresql#version-support-and-legacy-infrastructure
+- Heroku credentials: Ask vanessa@techbychoice.org for access to the staging and/or production Heroku apps
 
 
 ### Install Python and pipenv and enter virtual environment:
@@ -40,3 +47,7 @@ $ createdb tbc_db
     $ python manage.py migrate
     $ python manage.py createsuperuser
     $ python manage.py runserver
+
+Your instance is up and running! Available on **http://localhost:8000**
+
+Log into the admin panel with your createsuperuser info to create pages and customize: **http://localhost:8000/admin**

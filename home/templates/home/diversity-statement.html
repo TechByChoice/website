@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags %}
+
+{% block content %}
+<header id="header">
+  <div class="container">
+
+    <div id="logo" class="pull-left">
+      <!-- Uncomment below if you prefer to use an image logo -->
+       <a href="#intro"><img src="{% static 'imgs/logo.png' %}" alt="" title=""></a>
+    </div>
+
+    <nav id="nav-menu-container">
+      <ul class="nav-menu">
+        <li><a href="/#intro">Home</a></li>
+        <li><a href="/#about">About Us</a></li>
+        <li><a href="/#values">Values</a></li>
+        <li><a href="/#call-to-action">Membership</a></li>
+        <li><a href="/#team">Team</a></li>
+
+        <!--<li><a href="#sponsors">Sponsors</a></li>-->
+        <li class="menu-has-children"><a href="">Our Statements</a>
+          <ul>
+            <li><a href="/coc">Code of Conduct</a></li>
+            <li><a href="/diversity-statement">Diversity Statement</a></li>
+          </ul>
+        </li>
+        <li><a href="#contact">Contact Us</a></li>
+      </ul>
+    </nav><!-- #nav-menu-container -->
+  </div>
+</header><!-- #header -->
+
+
+  <!--==========================
+    Code of Conduct Section
+  ============================-->
+  <section id="about" class="section-bg">
+    <div class="container-fluid">
+      <div class="section-header">
+        <h3 class="section-title">Diversity Statement</h3>
+        <span class="section-divider"></span>
+        <div class="conten wow fadeInRight container text-left">
+          <p>Tech By Choice was created as a safe space for protected groups. We welcome and encourage everyone, no matter how you identify or how others perceive you, to participate in our space.</p>
+
+          <p>We welcome people of any gender identity or expression, race, ethnicity, size, nationality, sexual orientation, ability level, neurotype, religion, elder status, family structure, culture, subculture, political opinion, identity, and self-identification. We welcome activists, artists, bloggers, crafters, dilettantes, musicians, photographers, readers, writers, ordinary people, extraordinary people, and everyone in between.</p>
+
+          <p>We welcome people who want to change the world, people who want to keep in touch with friends, people who want to find a community, people who want to build something great, and people who just need a break after work. We welcome fans, geeks, nerds, frontend devs, backend devs, and project managers. (We welcome Internet beginners who aren't sure what any of those terms refer to.) We welcome you no matter if the Internet was a household word by the time you started secondary school, or whether you were already retired by the time the World Wide Web was invented.</p>
+
+          <p>We welcome you. You may wear a baby sling, hijab, a kippah, leather, piercings, a pentacle, a political badge, a rainbow, a rosary, tattoos, or something we can only dream of. You may carry a guitar or knitting needles or a sketchbook. Conservative or liberal, libertarian or socialist — we believe it's possible for people of all viewpoints and persuasions to come together and learn from each other. We believe in the broad spectrum of individual and collective experience and in the inherent dignity of all people. We believe that amazing things come when people from different worlds and worldviews approach each other to create a conversation.</p>
+
+          <p>We think accessibility for people with disabilities is a priority, not an afterthought. We think neurodiversity is a feature, not a bug. We believe in being inclusive, welcoming, and supportive of anyone who comes to us with good faith and the desire to build a community.</p>
+
+          <p>We have enough experience to know that we won't get any of this perfect on the first try. But we have enough hope, energy, and idealism to want to learn things we don't know now. We may not be able to satisfy everyone, but we can certainly work to avoid offending anyone. And we promise that if we get it wrong, we'll listen carefully and respectfully to you when you point it out to us, and we'll do our best to make good on our promise and fix our mistakes. If you feel we have gotten anything wrong at any point, please feel free to contact us at support@techbychoice.org org.</p>
+
+          <p>Our community experience is the most important thing to us. We know what goes wrong when organizations say one thing and do another, or when they refuse to say anything at all. We believe that keeping our operations transparent is just as important as keeping our servers stable.</p>
+
+          <p>Come as you are.</p>
+
+          <p>Adapted from <a href="https://www.dreamwidth.org/legal/diversity" target="_blank">Dreamwidth's Diversity Statement</a></p>
+        </div>
+      </div>
+
+    </div>
+  </section><!-- #about -->
+
+  <!--==========================
+    Contact Section
+  ============================-->
+  <section id="contact">
+    <div class="container">
+      <div class="row wow fadeInUp">
+
+        <div class="col-lg-4 col-md-4">
+          <div class="contact-about">
+            <h3 class="text-dark brand-name">Tech By Choice</h3>
+            <h4 class="intro--tag-line tag-line"><span class="text--green">Di</span><span class="text--blue">v</span><span class="text--purple">er</span><span class="text--red">s</span><span class="text--yellow">e</span><span class="text-dark"> By Design</span></h4>
+            <p>Have any questions or looking for way to help support our mission? Feel free to contact us any time through any of our social media account below, or through email. </p>
+            <p>Hope to hear from you soon!</p>
+            <div class="social-links">
+              <a target="_blank" href="https://twitter.com/_techbychoice" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a target="_blank" href="https://www.facebook.com/TechByChoiceDiverseByDesign" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a target="_blank" href="https://www.linkedin.com/company/tech-by-choice-org/about/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+              <a href="mailto:hello@techbychoice.org" class="email"><i class="fa fa-envelope"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <div class="info">
+            <div>
+              <h4 class="section-title text-lg-center text-sm-left">CONTACT US</h4>
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-8">
+          <div class="form">
+            <div id="sendmessage">Your message has been sent. Thank you!</div>
+            <div id="errormessage"></div>
+            <form role="form" class="contactForm">
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validation"></div>
+                </div>
+                <div class="form-group col-lg-6">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validation"></div>
+                </div>
+              </div>
+              <div class="form-group">
+                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                <div class="validation"></div>
+              </div>
+              <label style="display:none"></label>
+              <input type="text" name="__bucket_trap__" style="display: none" />
+              <div class="form-group">
+                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                <div class="validation"></div>
+              </div>
+              <div class="text-center"><button type="submit" title="Send Message">Send Message</button></div>
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- #contact -->
+
+<!--==========================
+  Footer
+============================-->
+<footer id="footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-6 text-lg-left text-center">
+        <div class="copyright">
+          &copy; Copyright <strong>Tech By Choice. Diverse By Design</strong>. All Rights Reserved
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <nav class="footer-links text-lg-right text-center pt-2 pt-lg-0">
+          <a href="#intro" class="scrollto">Home</a>
+          <a href="#about" class="scrollto">About</a>
+          <a href="/coc">Code of Conduct</a>
+          <a href="/diversity-statement">Diversity Statement</a>
+          <!--<a href="/co">Privacy Policy</a>-->
+          <!--<a href="#">Terms of Use</a>-->
+        </nav>
+      </div>
+    </div>
+  </div>
+</footer><!-- #footer -->
+
+<a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
+
+{% endblock %}
