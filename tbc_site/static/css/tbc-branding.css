@@ -1,0 +1,174 @@
+@import url("https://fonts.googleapis.com/css?family=Overpass:400,700|Saira:300,600");
+@font-face {
+  font-family: 'Limerick Serial';
+  src: url("../fonts/limerick_serial-bold-webfont.woff2") format("woff2"), url("../fonts/limerick_serial-bold-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.text--red {
+    color: #D50000;
+}
+.text--yellow {
+    color: #FFA700;
+}
+.text--purple {
+    color: #8D1B66;
+}
+.text--green {
+    color: #1B8D80;
+}
+.text--blue {
+    color: #1B6B8D;
+}
+.text--red__hover:hover {
+    color: #D50000;
+}
+.text--yellow__hover:hover {
+    color: #FFA700;
+}
+.text--purple__hover:hover {
+    color: #8D1B66;
+}
+.text--green__hover:hover {
+    color: #1B8D80;
+}
+.text--blue__hover:hover {
+    color: #1B6B8D;
+}
+.bg-black {
+    background-color: #000;
+}
+body {
+    font-family: 'Overpass';
+}
+h2 {
+    font-family: 'Overpass';
+    font-weight: 700;
+    text-transform: uppercase;
+}
+h3,
+.section-header .section-title,
+.section-title{
+    text-transform: uppercase;
+    font-family: 'Saira';
+    font-weight: 600;
+}
+
+.btn-primary {
+  font-family: "Saira", sans-serif;
+    text-transform: uppercase;
+  font-weight: 600;
+  padding: 8px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  border: 2px solid #fff;
+  color: #fff;
+    background-color: transparent;
+}
+
+.btn-primary:hover {
+  color: #C50000;
+    border-color: #fff;
+  background: #fff;
+}
+
+/*
+    navbar
+*/
+#header.header-fixed  {
+    background: rgba(224, 29, 65, 1);
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
+    /*color: #fff;*/
+}
+#header.header-fixed .nav-menu a {
+    color: #000;
+}
+/*
+    intro
+*/
+#logo img{
+    height: 35px;
+    width: auto;
+}
+#intro {
+    background:
+            linear-gradient(45deg,
+            rgba(224, 29, 65, 0.8),
+            rgba(255, 193, 7, 0.7)),
+            url(../imgs/fist-bump-bg-min.jpeg)
+            center top no-repeat;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+.into--title,
+.brand-name,
+.card-title{
+    font-family: 'Limerick Serial' !important;
+    text-transform: uppercase;
+}
+.intro--tag-line {
+    font-family: 'Saira' !important;
+    font-weight: 300;
+    text-align: left;
+}
+.down-arrow {
+    position: relative;
+    top: 100px;
+}
+/*
+    about
+*/
+.section-header .section-description {
+    color: #000;
+    font-style: inherit;
+}
+
+/*
+    values
+*/
+#values {
+    padding-bottom: 60px;
+}
+#values img {
+    width: 100%;
+    height: 100px;
+}
+#values .title a,
+card-title{
+    font-family: 'Overpass';
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/*
+    coc
+*/
+.coc #about {
+    padding-top: 100px;
+}
+.coc .nav-menu a {
+    color: #000;
+}
+#mobile-nav-toggle i {
+    color: #C50000;
+}
+
+.bounce {
+  -moz-animation: bounce 2s infinite;
+  -webkit-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+    padding-top: 50px;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
