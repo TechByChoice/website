@@ -19,3 +19,11 @@ def header(context, self):
         'self': self,
         'request': context['request'],
     }
+
+@register.inclusion_tag('home/tags/footer.html', takes_context=True)
+def footer(context, self):
+    self = self
+    return {
+        'self': self,
+        'request': context['request'],
+    }
