@@ -1,36 +1,10 @@
 {% extends "base.html" %}
 
-{% load static wagtailcore_tags %}
+{% load static wagtailcore_tags demo_tags %}
+{% get_site_root as site_root %}
 
 {% block content %}
-    <header id="header">
-      <div class="container">
-
-        <div id="logo" class="pull-left">
-          <!-- Uncomment below if you prefer to use an image logo -->
-           <a href="#intro"><img src="{% static 'imgs/logo.png' %}" alt="" title=""></a>
-        </div>
-
-        <nav id="nav-menu-container">
-          <ul class="nav-menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/#about">About Us</a></li>
-            <li><a href="/#values">Values</a></li>
-            <li><a href="/#call-to-action">Membership</a></li>
-            <li><a href="/#team">Team</a></li>
-
-            <!--<li><a href="#sponsors">Sponsors</a></li>-->
-            <li class="menu-has-children"><a href="">Our Statements</a>
-              <ul>
-                <li><a href="/coc">Code of Conduct</a></li>
-                <li><a href="/diversity-statement">Diversity Statement</a></li>
-              </ul>
-            </li>
-            <li><a href="#contact">Contact Us</a></li>
-          </ul>
-        </nav><!-- #nav-menu-container -->
-      </div>
-    </header><!-- #header -->
+      {% header self=self %}
 
 
       <!--==========================
