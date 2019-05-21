@@ -11,3 +11,6 @@ class CodeOfConductPage(Page):
 
 class DiversityStatementPage(Page):
     template = "home/diversity-statement.html"
+
+class CurriculumPage(Page):
+    template = "home/curriculum.html"
