@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags wagtailimages_tags static demo_tags %}
+{% get_site_root as site_root %}
+
+{% block content %}
+
+      {% header self=self %}
+
+      <section id="about" class="section-bg">
+        <div class="container-fluid">
+          <div class="section-header">
+            <h3 class="section-title">{{ self.title }}</h3>
+            <span class="section-divider"></span>
+            <div class="wow fadeInRight container text-left">
+              {% if self.body_text %}
+                 <div class="body-content generic-page">
+                     {% include "home/includes/streamfield.html" with content=self.body_text %}
+                 </div>
+             {% endif %}
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      {% footer self=self %}
+
+{% endblock %}
