@@ -144,7 +144,7 @@ card-title{
 /*
     coc
 */
-.coc #about {
+.coc .about {
     padding-top: 100px;
 }
 .coc .nav-menu a {
