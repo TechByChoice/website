@@ -507,40 +507,44 @@ body.mobile-nav-active #mobile-nav-toggle {
   background: #eff5f5;
 }
 
+.section-pink {
+  background: #FAF9FA;
+}
+
 /* About Us Section
 --------------------------------*/
-#about {
+.about {
   padding: 60px 0;
   overflow: hidden;
 }
 
-#about .about-img {
-  height: 510px;
+.about .about-img {
+  max-height: 510px;
   overflow: hidden;
 }
 
-#about .about-img img {
+.about .about-img img {
   margin-left: -15px;
   max-width: 100%;
 }
 
 @media (max-width: 768px) {
-  #about .about-img {
+  .about .about-img {
     height: auto;
   }
-  #about .about-img img {
+  .about .about-img img {
     margin-left: 0;
     padding-bottom: 30px;
   }
 }
 
-#about .content .h2 {
+.about .content .h2 {
   color: #333;
   font-weight: 300;
   font-size: 24px;
 }
 
-#about .content h3 {
+.about .content h3 {
   color: #777;
   font-weight: 300;
   font-size: 18px;
@@ -548,26 +552,26 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-style: italic;
 }
 
-#about .content p {
+.about .content p {
   line-height: 26px;
 }
 
-#about .content p:last-child {
+.about .content p:last-child {
   margin-bottom: 0;
 }
 
-#about .content i {
+.about .content i {
   font-size: 20px;
   padding-right: 4px;
   color: #C50000;
 }
 
-#about .content ul {
+.about .content ul {
   list-style: none;
   padding: 0;
 }
 
-#about .content ul li {
+.about .content ul li {
   padding-bottom: 10px;
 }
 
