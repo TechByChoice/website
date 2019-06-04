@@ -286,6 +286,11 @@ h1, h2, h3, h4, h5, h6 {
 .nav-menu ul li {
   min-width: 180px;
 }
+.nav-menu  .btn-red {
+  top: -3px;
+  position: relative;
+  padding: 5px 25px;
+}
 
 /* Nav Menu Arrows */
 .sf-arrows .sf-with-ul {
@@ -1189,7 +1194,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   font-size: 14px;
 }
 
-#contact .form button[type="submit"] {
+#contact .form button[type="submit"],
+.btn-red{
   background: linear-gradient(45deg, #9d0000, #C50000);
   border: 0;
   border-radius: 20px;
@@ -1197,7 +1203,8 @@ body.mobile-nav-active #mobile-nav-toggle {
   color: #fff;
 }
 
-#contact .form button[type="submit"]:hover {
+#contact .form button[type="submit"]:hover,
+.btn-red:hover {
   cursor: pointer;
 }
 

@@ -4,8 +4,10 @@
 
 More deployment info found here: [Wagtail/Heroku deployment guide](https://wagtail.io/blog/wagtail-heroku-2017/)
 
-Check out the [admin panel](https://tbc-site.herokuapp.com/admin)
-Ask vanessa@techbychoice.org for Production login credentials!
+Check out the [admin panel](https://www.techbychoice.org/admin)
+Ask vanessa@techbychoice.org for:
+- .env credentials
+- production login credentials
 
 ## Local Development Installation instructions:
 
@@ -41,6 +43,10 @@ Next step is to install all the required packages. This project is using `Pipenv
 
 ### Set up database
 $ createdb tbc_db
+
+### Set up your .env
+Create a .env file in your project root and copy the contents of the [example .env](https://github.com/TechByChoice/website/blob/develop/.env.example) into your new .env file
+Ask vanessa@techbychoice.org for credentials/keys
 
 ### Start the app
 
