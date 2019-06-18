@@ -28,18 +28,26 @@
         <meta name="theme-color" content="#ffffff">
 
         {# Search Engine #}
-        <meta name="description" content="A community aimed to increase diversity in the tech one technologist at a time.">
-        <meta name="image" content="{% static 'imgs/fb-image.jpg' %}">
+        <meta name="description" content="{% if self.search_description %}{{ self.search_description }}{% else %}A community aimed to increase diversity in the tech industry one technologist at a time.{% endif %}">
+        <meta name="image" content="https://tech-by-choice-assets.s3.us-east-2.amazonaws.com/images/TBC_twitter.jpg">
         <!-- Schema.org for Google -->
         <meta itemprop="name" content="Tech By Choice. Diverse By Design.">
         <meta itemprop="description" content="A community aimed to increase diversity in the tech one technologist at a time.">
-        <meta itemprop="image" content="http://techbychoice.org/imgs/logo.png">
+        <meta itemprop="image" content="https://tech-by-choice-assets.s3.us-east-2.amazonaws.com/images/TBC_twitter.jpg">
+
+        <!-- Facebook -->
+        <meta property="og:site_name" content="Tech By Choice. Diverse By Design."/>
+        <meta property="og:title" content="{% if self.seo_title %}{{ self.seo_title }}{% else %}{{ self.title }}{% endif %}"/>
+        <!-- <meta property="og:url" content="{% if self.full_url %}{{ self.full_url }}{% endif %}"/> -->
+        <meta property="og:type" content="website"/>
+        <meta property="og:image" content="https://tech-by-choice-assets.s3.us-east-2.amazonaws.com/images/TBC_twitter.jpg"/>
+
         <!-- Twitter -->
         <meta name="twitter:card" content="summary_large_image">
-        <meta name="twitter:site" content="$_TechByChoice">
+        <meta name="twitter:site" content="@_techbychoice">
         <meta name="twitter:title" content="Tech By Choice. Diverse By Design.">
-        <meta name="twitter:description" content="A community aimed to increase diversity in the tech one technologist at a time.">
-        <meta name="twitter:image" content="https://c1.staticflickr.com/8/7858/45858024055_96548a878c.jpg">
+        <meta name="twitter:description" content="{% if self.search_description %}{{ self.search_description }}{% else %}A community aimed to increase diversity in the tech industry one technologist at a time.{% endif %}">
+        <meta name="twitter:image" content="https://tech-by-choice-assets.s3.us-east-2.amazonaws.com/images/TBC_twitter.jpg">
         <meta name="twitter:image:alt" content="Tech By Choice Logo">
 
 
