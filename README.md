@@ -52,6 +52,7 @@ Ask vanessa@techbychoice.org for credentials/keys
 
     $ python manage.py migrate
     $ python manage.py createsuperuser
+    $ python manage.py compress
     $ python manage.py runserver
 
 Your instance is up and running! Available on **http://localhost:8000**
