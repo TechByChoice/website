@@ -1,33 +1,57 @@
 {% load demo_tags wagtailcore_tags static %}
-<header id="header">
-  <div class="container">
+<header id='header'>
+    <div class='container'>
 
-    <div id="logo" class="pull-left">
-      <!-- Uncomment below if you prefer to use an image logo -->
-       <a href="#intro"><img src="{% static 'imgs/logo.png' %}" alt="" title=""></a>
+        <div id='logo'
+             class='pull-left'>
+            <!-- Uncomment below if you prefer to use an image logo -->
+            <a href='/'><img src="{% static 'imgs/logo.png' %}"
+                                  alt=''
+                                  title=''></a>
+        </div>
+
+        <nav id='nav-menu-container'>
+            <ul class='nav-menu'>
+                <li><a href='/'>Home</a></li>
+                <li class='menu-has-children'>
+                    <span class='sf-with-ul'>About</span>
+                    <ul>
+                        <li><a href='/about'>Mission & Values</a></li>
+                        <li><a href='/partners'>Partners</a></li>
+                    </ul>
+                </li>
+                <li class='menu-has-children'>
+                    <span class='sf-with-ul'>Programs</span>
+                    <ul>
+                        <li><a href='/about'>TBC | Together</a></li>
+                        <li><a href='/classes'>Classes & Workshops</a></li>
+<!--                        <li><a href='/job-board'>Job Board</a></li>-->
+<!--                        <li><a href='/mentor'>Mentors</a></li>-->
+                    </ul>
+                </li>
+                <!--        <li><a href="/#values">Values</a></li>-->
+                <!-- <li><a href="/#team">Team</a></li> -->
+                <!--<li><a href="#sponsors">Sponsors</a></li>-->
+                <!-- TODO: make templates for Code of Conduct and diversity Statement -->
+                <li class='menu-has-children'>
+                    <span class='sf-with-ul'>Our Statements</span>
+                    <ul>
+                        <li><a href='/coc'>Code of Conduct</a></li>
+                        <li><a href='/diversity-statement'>Diversity Statement</a></li>
+                    </ul>
+                </li>
+                <li><a href='#contact'>Contact Us</a></li>
+                <li>
+                    <button class='btn btn-black' href='/#call-to-action'>Join</button>
+                </li>
+                <li>
+<!--                    <button class='btn-red'-->
+<!--                       href='https://secure.actblue.com/donate/tech-by-choice-1'>Sponsorship</button>-->
+                    <!-- TODO || UPDATE WORDING AND LINK THIS TO A PAGE THAT SHOWS COMPANIES HOW THEY CAN GET PARTNER WITH US -->
+                    <button class='btn-red'
+                       href='https://secure.actblue.com/donate/tech-by-choice-1'>Sponsorship</button>
+                </li>
+            </ul>
+        </nav><!-- #nav-menu-container -->
     </div>
-
-    <nav id="nav-menu-container">
-      <ul class="nav-menu">
-        <li><a href="/">Home</a></li>
-        <li><a href="/#about">About</a></li>
-        <li><a href="/#values">Values</a></li>
-        <li><a href="/#call-to-action">Join</a></li>
-        <li><a href="/#contribute">Contribute</a></li>
-        <!-- <li><a href="/#team">Team</a></li> -->
-        <!--<li><a href="#sponsors">Sponsors</a></li>-->
-        <!-- TODO: make templates for Code of Conduct and diversity Statement -->
-        <li class="menu-has-children"><a href="">Our Statements</a>
-          <ul>
-            <li><a href="/coc">Code of Conduct</a></li>
-            <li><a href="/diversity-statement">Diversity Statement</a></li>
-          </ul>
-        </li>
-        <li><a href="#contact">Contact Us</a></li>
-        <li>
-            <a class="btn-red" href="https://secure.actblue.com/donate/tech-by-choice-1">Donate</a>
-        </li>
-      </ul>
-    </nav><!-- #nav-menu-container -->
-  </div>
 </header><!-- #header -->

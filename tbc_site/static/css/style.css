@@ -291,6 +291,21 @@ h1, h2, h3, h4, h5, h6 {
   position: relative;
   padding: 5px 25px;
 }
+.nav-menu .btn-black {
+  border-radius: 20px;
+  top: -3px;
+  position: relative;
+  padding: 5px 25px;
+  border: 2px solid #000;
+  background-color: transparent;
+  color: #000;
+}
+.btn-black:hover {
+  transition: 0.3s;
+  color: #fff;
+  background-color: #000;
+  
+}
 
 /* Nav Menu Arrows */
 .sf-arrows .sf-with-ul {
@@ -323,11 +338,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* Nav Meu Styling */
-.nav-menu a {
+.nav-menu a,
+.nav-menu span {
   padding: 0 8px 10px 8px;
   text-decoration: none;
   display: inline-block;
-  color: #fff;
+  color: #000;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: 14px;
@@ -349,7 +365,8 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
 }
 
-.nav-menu ul li a {
+.nav-menu ul li a,
+.nav-menu ul li span{
   padding: 10px;
   color: #333;
   transition: 0.3s;
@@ -358,7 +375,8 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: none;
 }
 
-.nav-menu ul li:hover > a {
+.nav-menu ul li:hover > a,
+.nav-menu ul li:hover > span{
   color: #C50000;
 }
 
