@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags demo_tags %}
+{% get_site_root as site_root %}
+
+{% block content %}
+{% header self=self %}
+
+
+<!--==========================
+ About the Team
+============================-->
+<section class="about section-bg">
+    <div class='container-fluid'>
+        <div class='section-header'>
+            <h3 class=' section-title'>The Team</h3>
+        </div>
+        <section id="leadership_team" class="section-bg">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Leadership Team</h2>
+                    <span class="section-divider"></span>
+                </div>
+                <div class="row wow fadeInUp">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="member">
+                            <div class="pic img-fluid"><img src="{% static 'imgs/valerie.jpg' %}" alt="Image of Valerie Sharp"></div>
+                            <h4>Valerie Sharp</h4>
+                            <span>Executive Director</span>
+                            <div class="social">
+                                <!--<a target="_blank" href="https://twitter.com/digitalblkhippy"><i class="fa fa-twitter"></i></a>-->
+                                <a target="_blank" href="https://linkedin.com/in/valerie--sharp"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="member">
+                            <div class="pic img-fluid"><img src="{% static 'imgs/vanessa_flippable_450.jpg' %}" alt="Image of Vanessa Archambault"></div>
+                            <h4>Vanessa Archambault</h4>
+                            <span>Chief Technology Officer</span>
+                            <div class="social">
+                                <a target="_blank" href="https://www.linkedin.com/in/vanessaarchambault/"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="member">
+                            <div class="pic img-fluid"><img src="{% static 'imgs/renee.jpeg' %}" alt=""></div>
+                            <h4>Renee Carignan</h4>
+                            <span>Chief Operations Officer</span>
+                            <div class="social">
+                                <a target="_blank" href="https://www.linkedin.com/in/reneecs/"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="member">
+                            <div class="pic img-fluid"><img src="{% static 'imgs/Tracie_womack_sq.jpeg' %}" alt=""></div>
+                            <h4>Tracie Howard Womack</h4>
+                            <span>Community Advocate Director</span>
+                            <div class="social">
+                                <a target="_blank" href="https://www.linkedin.com/in/tracie-womack-6079b713/"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section><!-- #leadership -->
+        <section id="team" class="section-bg">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Local Leaders</h2>
+                    <span class="section-divider"></span>
+                </div>
+                <div class="row wow fadeInUp">
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="member">
+                            <div class="pic img-fluid"><img src="{% static 'imgs/valerie.jpg' %}" alt="Image of Valerie Sharp"></div>
+                            <h4>Valerie Sharp</h4>
+                            <span>Executive Director</span>
+                            <div class="social">
+                                <!--<a target="_blank" href="https://twitter.com/digitalblkhippy"><i class="fa fa-twitter"></i></a>-->
+                                <a target="_blank" href="https://linkedin.com/in/valerie--sharp"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="member">
+                            <div class="pic img-fluid"><img src="{% static 'imgs/vanessa_flippable_450.jpg' %}" alt="Image of Vanessa Archambault"></div>
+                            <h4>Vanessa Archambault</h4>
+                            <span>Chief Technology Officer</span>
+                            <div class="social">
+                                <a target="_blank" href="https://www.linkedin.com/in/vanessaarchambault/"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="member">
+                            <div class="pic img-fluid"><img src="{% static 'imgs/renee.jpeg' %}" alt=""></div>
+                            <h4>Renee Carignan</h4>
+                            <span>Chief Operations Officer</span>
+                            <div class="social">
+                                <a target="_blank" href="https://www.linkedin.com/in/reneecs/"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="member">
+                            <div class="pic img-fluid"><img src="{% static 'imgs/Tracie_womack_sq.jpeg' %}" alt=""></div>
+                            <h4>Tracie Howard Womack</h4>
+                            <span>Community Advocate Director</span>
+                            <div class="social">
+                                <a target="_blank" href="https://www.linkedin.com/in/tracie-womack-6079b713/"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section><!-- #leadership -->
+
+    </div>
+</section><!-- #contact -->
+{% footer self=self %}
+
+{% endblock %}

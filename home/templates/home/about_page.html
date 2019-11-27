@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags demo_tags %}
+{% get_site_root as site_root %}
+
+{% block content %}
+{% header self=self %}
+
+
+<!--==========================
+  Code of Conduct Section
+============================-->
+<section class="about section-bg">
+    <h1>About Page</h1>
+</section><!-- #contact -->
+
+{% footer self=self %}
+
+{% endblock %}

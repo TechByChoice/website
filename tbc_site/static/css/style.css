@@ -304,7 +304,10 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.3s;
   color: #fff;
   background-color: #000;
-  
+
+}
+.dropdown-menu__item {
+  text-transform: uppercase;
 }
 
 /* Nav Menu Arrows */
@@ -337,7 +340,7 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-/* Nav Meu Styling */
+/* Nav Menu Styling */
 .nav-menu a,
 .nav-menu span {
   padding: 0 8px 10px 8px;
@@ -533,6 +536,10 @@ body.mobile-nav-active #mobile-nav-toggle {
 .section-pink {
   background: #FAF9FA;
 }
+
+/* TeamSection
+--------------------------------*/
+
 
 /* About Us Section
 --------------------------------*/
@@ -1008,50 +1015,59 @@ body.mobile-nav-active #mobile-nav-toggle {
 
 /* Our Team Section
 --------------------------------*/
-#team {
+#team, #leadership_team {
   padding: 60px 0;
   overflow: hidden;
 }
 
-#team .member {
+#team .member,
+#leadership_team .member {
   text-align: center;
   margin-bottom: 20px;
 }
 
-#team .member .pic {
+#team .member .pic,
+#leadership_team .member .pic {
   margin-bottom: 15px;
   overflow: hidden;
 }
 
-#team .member .pic img {
+#team .member .pic img,
+#leadership_team .member .pic img {
   max-width: 100%;
 }
 
-#team .member h4 {
+#team .member h4,
+#leadership_team .member h4 {
   font-weight: 700;
   margin-bottom: 2px;
   font-size: 18px;
 }
 
-#team .member span {
+#team .member span,
+#leadership_team .member span {
   font-style: italic;
   display: block;
   font-size: 13px;
 }
 
-#team .member .social {
+#team .member .social,
+#leadership_team .member .social {
   margin-top: 15px;
 }
 
-#team .member .social a {
+#team .member .social a,
+#leadership_team .member .social a {
   color: #b3b3b3;
 }
 
-#team .member .social a:hover {
+#team .member .social a:hover,
+#leadership_team .member .social a:hover {
   color: #C50000;
 }
 
-#team .member .social i {
+#team .member .social i,
+#leadership_team .member .social i {
   font-size: 18px;
   margin: 0 2px;
 }

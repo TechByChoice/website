@@ -1,0 +1,82 @@
+{
+  "_from": "airtable",
+  "_id": "airtable@0.7.1",
+  "_inBundle": false,
+  "_integrity": "sha512-VV/8LKyDOtWca2YFMDJWDbPNPkhQPij6+H8SwoLTDEAR/02mTcGI1fSiwC5eW3xfy5Uzn6gLlfTGne7YqxxUkQ==",
+  "_location": "/airtable",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "airtable",
+    "name": "airtable",
+    "escapedName": "airtable",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/airtable/-/airtable-0.7.1.tgz",
+  "_shasum": "1ebad9c9ed332d9348fb3ec3ef9c2d8be452b4f4",
+  "_spec": "airtable",
+  "_where": "/Users/valeriesharp/ufo/TBC/website/tbc_site",
+  "browser": {
+    "request": "xhr",
+    "./lib/package_version": "./lib/package_version_browser"
+  },
+  "bugs": {
+    "url": "https://github.com/airtable/airtable.js/issues"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "lodash": "4.17.14",
+    "request": "2.88.0",
+    "xhr": "2.3.3"
+  },
+  "deprecated": false,
+  "description": "The official Airtable JavaScript library.",
+  "devDependencies": {
+    "body-parser": "^1.19.0",
+    "envify": "^4.1.0",
+    "eslint": "^6.1.0",
+    "express": "^4.17.1",
+    "get-port": "^5.0.0",
+    "grunt": "^1.0.4",
+    "grunt-browserify": "^5.3.0",
+    "jest": "^24.8.0"
+  },
+  "engines": {
+    "node": ">= 0.10.0"
+  },
+  "files": [
+    "/README.md",
+    "/CHANGELOG.md",
+    "/LICENSE.txt",
+    "/build/airtable.browser.js",
+    "/lib/"
+  ],
+  "homepage": "https://github.com/airtable/airtable.js",
+  "keywords": [
+    "airtable",
+    "productivity",
+    "database",
+    "spreadsheet"
+  ],
+  "license": "MIT",
+  "main":"lib/airtable.js",
+  "name": "airtable",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/airtable/airtable.js.git"
+  },
+  "scripts": {
+    "lint":"eslint ",
+    "pretest": "npm run lint",
+    "test": "jest --env node"
+  },
+  "version": "0.7.1"
+}

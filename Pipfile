@@ -50,4 +50,4 @@ psycopg2-binary = "*"
 django-libsass = "*"
 
 [requires]
-python_version = "3.6"
+python_version = "3.7.4"

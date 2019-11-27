@@ -16,6 +16,7 @@ npm-debug.log*
 /.cache/
 /.pytest_cache/
 *.sqlite3
+/tbc_site/node_modules/
 
 ### JetBrains
 .idea/

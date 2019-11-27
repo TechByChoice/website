@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% load static wagtailcore_tags demo_tags %}
+{% get_site_root as site_root %}
+
+{% block content %}
+{% header self=self %}
+
+<!-- TODO || SET UP BACKEND TO DYNAMICALLY PULL IN ALL TEAM MEMBERS  -->
+<!--==========================
+ About the Team
+============================-->
+<section class='about section-bg'>
+    <div class='container-fluid  mt-5'>
+        <div class='section-header'>
+            <div class='row'>
+                <div class='col-4'>
+                    <img src="{% static 'imgs/valerie.jpg' %}"
+                         class='img-fluid'
+                         alt='Image of Valerie Sharp'>
+                </div>
+                <div class='col-8'>
+                    <h3 class=' section-title'>[Valerie] [Sharp]</h3>
+                    <span class="section-divider"></span>
+<!--                    <div class='row'>-->
+                        <div class='col-3'>
+                            <dl class='list-inline list-inline'>
+                                <dt class='mb-1'>Title:</dt>
+                                <dd>[title]</dd>
+                                <dt class='mb-1'>Chapter:</dt>
+                                <dd>[chapter city]</dd>
+                                <dt class='mb-1'>Skills: </dt>
+                                <dd>
+                                    <ul class='list-inline'>
+                                        <li class='list-inline-item'>one</li>
+                                        <li class='list-inline-item'>two</li>
+                                        <li class='list-inline-item'>three</li>
+                                    </ul>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class='col-9'>
+                            <dl>
+                                <dt>Bio</dt>
+                                <dd>
+                                    <p>Valerie is a technologist who focuses on creating user-centered digital experiences as a full-time UX designer & full stack developer. To help spread the financial wealth offered by the tech industry, Valerie founded Tech By Choice, a nonprofit with a mission to increase diversity in the STEM related industries by providing low to no cost classes and event to help individuals in protected groups enter, stay, and thrive in their field.</p>
+                                </dd>
+                            </dl>
+                        </div>
+<!--                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+</section><!-- #contact -->
+
+{% footer self=self %}
+
+{% endblock %}

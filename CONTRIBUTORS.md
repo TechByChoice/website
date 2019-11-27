@@ -7,6 +7,7 @@ This is a list of volunteers who have dedicated their time to help maintain [tec
 People on this list are those who have volunteered to be the main supports and code wranglers for the Tech By Choice website code base.
 
 [Vanessa Archambault](https://github.com/zoombear)
+[Valerie Phoenix](https://github.com/deltav93)
 
 
 ## Core Contributor(s)

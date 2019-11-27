@@ -1,5 +1,6 @@
 from django.db import models
 from django import forms
+from airtable import Airtable
 
 from wagtail.core.models import Page
 from wagtail.core.fields import StreamField
@@ -66,10 +67,25 @@ class RawHtmlEntry(StreamBlock):
 
 
 class HomePage(Page):
-    pass
+    base_key = 'app2OXtbMVkriy7KX'
+    table_name = 'TBC Directory'
+    airtable = Airtable(base_key, 'table_name', api_key='keyCDI9g6pLU2Le5i')
+    print(Page)
 
 class CodeOfConductPage(Page):
+    print("hey")
     template = "home/coc.html"
+
+class AboutPage(Page):
+    template = "home/about_page.html"
+
+class TeamPage(Page):
+    base_key = 'app2OXtbMVkriy7KX'
+    table_name = 'TBC Directory'
+    airtable = Airtable(base_key, 'table_name', api_key='keyCDI9g6pLU2Le5i')
+    print(airtable)
+
+    template = "home/team.html"
 
 class DiversityStatementPage(Page):
     template = "home/diversity-statement.html"
