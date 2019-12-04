@@ -86,10 +86,7 @@
 
         {% block content %}{% endblock %}
 
-        <script
-        src="https://code.jquery.com/jquery-3.3.1.min.js"
-        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-        crossorigin="anonymous"></script>
+        <script src="{% static 'lib/jquery/jquery.min.js' %}"></script>
 
         {# Global javascript #}
         {% compress js %}
@@ -111,6 +108,27 @@
 
         {% block extra_js %}
             {# Override this in templates to add extra javascript #}
+            <script type="text/javascript" charset="utf-8">
+                var randomStrings = [
+                    "women",
+                    "POCs",
+                    "men of color",
+                    "women of color",
+                    "non-binary people",
+                    "trans men",
+                    "trans women",
+                    "Latinx"
+                ];
+
+                var randomDiv = document.getElementById("change-text");
+
+                function load() {
+                    randomIndex = Math.ceil((Math.random()*randomStrings.length-1));
+                    newText = randomStrings[randomIndex];
+                    randomDiv.innerHTML = newText;
+                }
+                window.onload = load;
+            </script>
         {% endblock %}
     </body>
 </html>
