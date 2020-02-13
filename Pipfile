@@ -51,4 +51,4 @@ psycopg2-binary = "*"
 django-libsass = "==0.7"
 
 [requires]
-python_version = "3.7"
+python_version = "3.7.6"
